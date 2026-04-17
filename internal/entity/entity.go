@@ -6,7 +6,7 @@ import (
 )
 
 type Entry struct {
-	ID          string   `json:"id"`
+	ID          int      `json:"id"`
 	Name        string   `json:"name"`
 	Login       string   `json:"login"`
 	Password    string   `json:"password"`
@@ -35,7 +35,7 @@ func NewEntry(name, login, password, url, notes string, tags []string) *Entry {
 		cleanTags = append(cleanTags, tag)
 	}
 
-	// 3. Установка времени при пустых значениях
+	// 3. Установка временисоздания и обновления
 	now := time.Now().Format(time.RFC3339)
 
 	// 4. Сборка и возвращение
